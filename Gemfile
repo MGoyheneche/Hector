@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'figaro'
 gem 'haml-rails'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
+gem 'devise'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
