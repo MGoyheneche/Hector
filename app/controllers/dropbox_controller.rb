@@ -15,34 +15,36 @@ def authorize
       redirect_to root_url
     else
       result = request_token.get_access_token(oauth_verifier: params[:oauth_token])
-      # create_user_and_return_home(result)
 
       session[:token] = result.token
       session[:secret] = result.secret
+
+      client = Dropbox::API::Client.new :token => session[:token], :secret => session[:secret]
+      session[:email] = client.account.email
 
       redirect_to new_user_registration_url
     end
   end
 
-  def create_user_and_return_home(result)
+  # def create_user_and_return_home(result)
 
-  	puts "result.token: #{result.token}"
-  	puts "result.secret: #{result.secret}"
+  # 	puts "result.token: #{result.token}"
+  # 	puts "result.secret: #{result.secret}"
 
 
-    # if user = User.find_by_dropbox_uid(params[:uid])
-    #   user.update_attributes(access_token: result.token, access_secret: result.secret)
-    #   if user.waitlist
-    #     flash[:notice] = "Success!"
-    #     redirect_to controller: 'home', action: 'show', id: user.id
-    #   else
-    #     flash[:notice] = "Success!"
-    #     redirect_to controller: 'home', action: 'show', id: user.id
-    #   end
-    # else
-    #   user = User.create!(access_token: result.token, access_secret: result.secret, dropbox_uid: params[:uid])
-    #   flash[:notice] = "Beauty! You've succesfully authorized Splashbox with Dropbox."
-    #   redirect_to controller: 'home', action: 'show', id: user.id
-    # end
-  end
+  #   if user = User.find_by_dropbox_uid(params[:uid])
+  #     user.update_attributes(access_token: result.token, access_secret: result.secret)
+  #     if user.waitlist
+  #       flash[:notice] = "Success!"
+  #       redirect_to controller: 'home', action: 'show', id: user.id
+  #     else
+  #       flash[:notice] = "Success!"
+  #       redirect_to controller: 'home', action: 'show', id: user.id
+  #     end
+  #   else
+  #     user = User.create!(access_token: result.token, access_secret: result.secret, dropbox_uid: params[:uid])
+  #     flash[:notice] = "Beauty! You've succesfully authorized Splashbox with Dropbox."
+  #     redirect_to controller: 'home', action: 'show', id: user.id
+  #   end
+  # end
 end

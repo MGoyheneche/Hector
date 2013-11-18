@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :autofocus => true, :value => session[:email] %></div>
 
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>
@@ -16,3 +16,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<%= session[:token] %> <br>
+<%= session[:secret] %>
+<%= session[:email] %>
