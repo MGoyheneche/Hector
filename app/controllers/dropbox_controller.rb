@@ -15,7 +15,12 @@ def authorize
       redirect_to root_url
     else
       result = request_token.get_access_token(oauth_verifier: params[:oauth_token])
-      create_user_and_return_home(result)
+      # create_user_and_return_home(result)
+
+      session[:token] = result.token
+      session[:secret] = result.secret
+
+      redirect_to new_user_registration_url
     end
   end
 
