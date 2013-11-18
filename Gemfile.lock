@@ -74,6 +74,10 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dropbox-api (0.4.1)
+      hashie
+      multi_json
+      oauth
     email_spec (1.5.0)
       launchy (~> 2.1)
       mail (~> 2.2)
@@ -105,6 +109,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hashie (2.0.5)
     hike (1.2.3)
     hpricot (0.8.6)
     html2haml (1.0.1)
@@ -137,6 +142,7 @@ GEM
       bson (~> 2.0.0.rc3)
       optionable (~> 0.1.1)
     multi_json (1.8.2)
+    oauth (0.4.7)
     optionable (0.1.1)
     origin (1.1.0)
     orm_adapter (0.5.0)
@@ -229,6 +235,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner (= 1.0.1)
   devise
+  dropbox-api
   email_spec
   figaro
   guard-bundler
