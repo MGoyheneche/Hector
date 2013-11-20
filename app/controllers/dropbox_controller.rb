@@ -47,4 +47,8 @@ def authorize
   #     redirect_to controller: 'home', action: 'show', id: user.id
   #   end
   # end
+
+  def index
+
+  end
 end
