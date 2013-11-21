@@ -3,5 +3,8 @@
 - else
 	no current user
 
+%ul
+	- @user.dropzones.each do |dropzone|
+		%li= link_to dropzone.name, dropzone
 
-= link_to "Sign out", destroy_user_session_path, :method => :delete
+%p= link_to "Sign out", destroy_user_session_path, :method => :delete

@@ -37,4 +37,5 @@ class User
   ## Custom fields
   field :dropbox_token, :type => String, :default => "token"
   field :dropbox_secret, :type => String, :default => "secret"
+  has_many :dropzones
 end

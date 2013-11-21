@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @dropzone.name
+
+= link_to 'Edit', edit_dropzone_path(@dropzone)
+\|
+= link_to 'Back', dropzones_path

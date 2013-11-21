@@ -1,0 +1,19 @@
+%h1 Listing dropzones
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @dropzones.each do |dropzone|
+    %tr
+      %td= dropzone.name
+      %td= link_to 'Show', dropzone
+      %td= link_to 'Edit', edit_dropzone_path(dropzone)
+      %td= link_to 'Destroy', dropzone, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dropzone', new_dropzone_path
