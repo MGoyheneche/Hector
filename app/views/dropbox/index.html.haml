@@ -1,10 +1,11 @@
 - if user_signed_in?
 	= current_user.email
+	%br/
+	%ul
+		- @user.dropzones.each do |dropzone|
+			%li= link_to dropzone.name, dropzone
 - else
 	no current user
 
-%ul
-	- @user.dropzones.each do |dropzone|
-		%li= link_to dropzone.name, dropzone
 
 %p= link_to "Sign out", destroy_user_session_path, :method => :delete
