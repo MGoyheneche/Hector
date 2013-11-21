@@ -51,4 +51,8 @@ def authorize
   def index
     @user = current_user
   end
+
+  def upload
+    DropboxWorker.perform_async(current_user._id.to_s)
+  end
 end

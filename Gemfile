@@ -12,6 +12,9 @@ gem 'haml-rails'
 gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'devise'
 gem 'dropbox-api'
+gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
