@@ -1,5 +1,9 @@
 Hector::Application.routes.draw do
-  resources :dropzones
+  # post "drops/create"
+
+  resources :dropzones do
+	  resources :drops
+	end
 
   get "dropbox/authorize"
   get "dropbox/authorized_callback"

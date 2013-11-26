@@ -7,3 +7,13 @@
 = link_to 'Edit', edit_dropzone_path(@dropzone)
 \|
 = link_to 'Back', dropzones_path
+
+
+= form_for [@dropzone, Drop.new], :html => {:multipart => true} do |f|
+  %p
+    <label>My Avatar</label>
+    = f.file_field :drop
+    = f.hidden_field :drop_cache
+    = f.text_field :dropzone, :value => @dropzone._id
+
+    = f.submit

@@ -10,6 +10,7 @@ class DropzonesController < ApplicationController
   # GET /dropzones/1
   # GET /dropzones/1.json
   def show
+    @drop = Drop.new
   end
 
   # GET /dropzones/new

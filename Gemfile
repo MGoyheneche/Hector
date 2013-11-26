@@ -13,7 +13,9 @@ gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
 gem 'devise'
 gem 'dropbox-api'
 gem 'sidekiq'
-gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'carrierwave'
+gem 'carrierwave-mongoid', '~> 0.6.0', :require => 'carrierwave/mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 
 group :development do
   gem 'better_errors'
